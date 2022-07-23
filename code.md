@@ -1,4 +1,3 @@
-
 # Catalogue
 <!-- vim-markdown-toc GFM -->
 
@@ -10,30 +9,34 @@
   - [修改文件路径](#修改文件路径)
   - [避免小数丢失精度](#避免小数丢失精度)
   - [浏览器朗读文字](#浏览器朗读文字)
-  - [替换字符](#替换字符)
-  - [检验字符](#检验字符)
+  - [正则匹配](#正则匹配)
+    - [替换字符](#替换字符)
+    - [检验字符](#检验字符)
   - [匹配url的参数](#匹配url的参数)
   - [创建文件流](#创建文件流)
-  - [统计字母个数](#统计字母个数)
   - [接收媒体输入](#接收媒体输入)
-  - [打乱数组](#打乱数组)
-  - [随机生成11位字符串](#随机生成11位字符串)
-  - [随机颜色](#随机颜色)
+  - [数组](#数组)
+    - [生成数组](#生成数组)
+    - [打乱数组](#打乱数组)
+    - [过滤假值](#过滤假值)
+    - [数组填充](#数组填充)
+    - [统计字母个数](#统计字母个数)
+  - [随机生成](#随机生成)
+    - [11位字符串](#11位字符串)
+    - [颜色](#颜色)
   - [拖动元素](#拖动元素)
   - [拖动加载文件](#拖动加载文件)
   - [清空拖动选择](#清空拖动选择)
-  - [过滤假值](#过滤假值)
   - [文档碎片](#文档碎片)
   - [将HTML字符串转换为DOM节点](#将html字符串转换为dom节点)
-  - [数组填充](#数组填充)
   - [屏幕共享 & 视频录制](#屏幕共享--视频录制)
-  - [动态添加input后自动聚焦](#动态添加input后自动聚焦)
-  - [获取 selected option](#获取-selected-option)
-  - [阻止a标签默认跳转](#阻止a标签默认跳转)
-  - [设置checkbox选中、取消选中、获取被选中的值、判断是否选中等](#设置checkbox选中取消选中获取被选中的值判断是否选中等)
-  - [禁用select下拉框](#禁用select下拉框)
-  - [重置select](#重置select)
-  - [清空input选中的文件](#清空input选中的文件)
+  - [动态添加\<input>后自动聚焦](#动态添加input后自动聚焦)
+  - [获取\<select>被选中的选项](#获取select被选中的选项)
+  - [阻止\<a>默认跳转](#阻止a默认跳转)
+  - [设置 input[checkbox] 选中、取消选中、获取被选中的值、判断是否选中](#设置-inputcheckbox-选中取消选中获取被选中的值判断是否选中)
+  - [禁用\<select>](#禁用select)
+  - [重置\<select>](#重置select)
+  - [清空\<input>选中的文件](#清空input选中的文件)
   - [上传图片](#上传图片)
   - [视频截图](#视频截图)
   - [复制内容到粘贴板](#复制内容到粘贴板)
@@ -41,50 +44,56 @@
   - [退出全屏](#退出全屏)
   - [监听全屏、退出全屏](#监听全屏退出全屏)
   - [监听 localStorage、sessionStorage 事件](#监听-localstoragesessionstorage-事件)
-  - [生成数组](#生成数组)
   - [下载文件](#下载文件)
+  - [读取文件](#读取文件)
   - [触底加载](#触底加载)
   - [控制输入框输入，光标不移动](#控制输入框输入光标不移动)
-  - [防抖 debounce](#防抖-debounce)
-  - [节流 throttle](#节流-throttle)
+  - [防抖](#防抖)
+  - [节流](#节流)
   - [生成UUID](#生成uuid)
   - [POST 请求上传文件](#post-请求上传文件)
   - [如何实现页面刷新后不定位到之前的滚动位置？](#如何实现页面刷新后不定位到之前的滚动位置)
   - [参数非空检测](#参数非空检测)
-  - [text/x-jquery-tmpl 使用记录](#textx-jquery-tmpl-使用记录)
-  - [将元素滚动到](#将元素滚动到)
+  - [jquery模板语法](#jquery模板语法)
+  - [将元素滚动到用户可见](#将元素滚动到用户可见)
+  - [表单请求](#表单请求)
+  - [数字由逗号分隔](#数字由逗号分隔)
+  - [对象数组多字段排序](#对象数组多字段排序)
 - [CSS](#css)
   - [排除第一个元素](#排除第一个元素)
   - [iconfont的使用](#iconfont的使用)
-  - [nth-child奇偶匹配](#nth-child奇偶匹配)
-  - [nth-child根据规则给样式](#nth-child根据规则给样式)
+  - [nth-child](#nth-child)
+    - [奇偶匹配](#奇偶匹配)
+    - [根据规则给样式](#根据规则给样式)
   - [间隔排布](#间隔排布)
-  - [box-shadow阴影](#box-shadow阴影)
-  - [自定义箭头](#自定义箭头)
-  - [自定义圆点](#自定义圆点)
-  - [阻止鼠标选择文字](#阻止鼠标选择文字)
-  - [渐变色](#渐变色)
-  - [去除滚动条(不够优雅)](#去除滚动条不够优雅)
+  - [内投影](#内投影)
+  - [自定义图形](#自定义图形)
+    - [箭头](#箭头)
+    - [圆点](#圆点)
+  - [禁止用户选择](#禁止用户选择)
+  - [渐变色文本](#渐变色文本)
   - [banner](#banner)
-  - [a标签去除默认样式](#a标签去除默认样式)
+  - [去除\<a>默认样式](#去除a默认样式)
+  - [去除[input:password]图标](#去除inputpassword图标)
   - [多行文本省略](#多行文本省略)
   - [文本换行显示](#文本换行显示)
   - [文本不换行](#文本不换行)
   - [给文本添加下划线](#给文本添加下划线)
-  - [::placeholder](#placeholder)
-  - [背景图片不全](#背景图片不全)
+  - [修改表单元素的占位文本样式](#修改表单元素的占位文本样式)
+  - [解决背景图片不全问题](#解决背景图片不全问题)
   - [匹配后代获得焦点](#匹配后代获得焦点)
-  - [去除 input-number 默认的按钮](#去除-input-number-默认的按钮)
+  - [去除 input[number] 默认的按钮](#去除-inputnumber-默认的按钮)
   - [position：fixed 如何水平垂直居中](#positionfixed-如何水平垂直居中)
   - [定义全局变量](#定义全局变量)
   - [引入文件](#引入文件)
   - [进度条](#进度条)
   - [文本选中样式](#文本选中样式)
   - [图片异常处理](#图片异常处理)
-  - [accent-color](#accent-color)
-  - [::marker](#marker)
-  - [caret-color](#caret-color)
-  - [writing-mode](#writing-mode)
+  - [重置表单组件的颜色](#重置表单组件的颜色)
+  - [修改\<li>默认项目符号或数字](#修改li默认项目符号或数字)
+  - [修改插入光标的颜色](#修改插入光标的颜色)
+  - [文字排布方式](#文字排布方式)
+  - [自定义滚动条样式](#自定义滚动条样式)
 - [VUE](#vue)
   - [初始化 data 中的数据](#初始化-data-中的数据)
   - [模拟点击](#模拟点击)
@@ -100,9 +109,9 @@
 - [HTML](#html)
   - [右键菜单](#右键菜单)
   - [iframe 添加设备权限](#iframe-添加设备权限)
-  - [读取文件](#读取文件)
-  - [中文空格字符](#中文空格字符)
-  - [制表符的转义字符](#制表符的转义字符)
+  - [转义字符](#转义字符)
+    - [中文空格字符](#中文空格字符)
+    - [制表符](#制表符)
   - [增加焦点](#增加焦点)
 - [uniapp](#uniapp)
   - [如何关闭顶部导航](#如何关闭顶部导航)
@@ -110,6 +119,10 @@
 - [git](#git)
   - [设置代理](#设置代理)
   - [取消代理](#取消代理)
+- [echarts](#echarts)
+  - [格式化文本](#格式化文本)
+  - [富文本](#富文本)
+  - [默认标签颜色与数据项颜色保持一致](#默认标签颜色与数据项颜色保持一致)
 - [other](#other)
   - [实现前后端跨域请求处理以及携带 Cookie](#实现前后端跨域请求处理以及携带-cookie)
 
@@ -119,7 +132,7 @@
 
 ## 获取当前日期和时间
 
-tags: [ toLocaleDateString ] [ toLocaleTimeString ] [ toLocaleString ]
+Tags: [Date] [toLocaleDateString] [toLocaleTimeString] [toLocaleString]
 
 ```javascript {.line-numbers}
 const date = new Date();
@@ -131,7 +144,7 @@ console.log(cdate, ctime, cdate_ctime);
 
 ## 比较时间
 
-tags: [ toISOString ] [ localeCompare ]
+tags: [Date] [string] [toISOString] [localeCompare]
 
 ```javascript {.line-numbers}
 const date1 = new Date('2021-10-21T07:39:21.176Z').toISOString();
@@ -145,19 +158,19 @@ console.log(result);
 
 ## 获取文件后缀
 
-tags: [ subString ] [ lastIndexOf ]
+tags: [string] [subString] [lastIndexOf]
 
 ```javaScript {.line-numbers}
-const filePath = "企业微信截图_5225fd8a-ee70-4ed1-b267-c46dcdf637ca.png";
+const filePath = "xxx.png";
 console.log(filePath.substring(filePath.lastIndexOf('.') + 1))
 ```
 
 ## 修改文件路径
 
-tags: [ lastIndexOf ] [ subString ] [ slice ]
+tags: [string] [lastIndexOf] [subString] [slice]
 
 ```javascript {.line-numbers}
-const filePath = '/profile/upload//2021/11/04/90d39148662760c2619c4b741ba6ea7a.jpg';
+const filePath = 'xxx.jpg';
 const pos = filePath.lastIndexOf('.');
 const res = filePath.substring(0, pos) + '-thumb' + filePath.slice(pos);
 console.log(res);
@@ -165,7 +178,7 @@ console.log(res);
 
 ## 避免小数丢失精度
 
-tags: [ IEEE754 ]
+tags: [IEEE754]
 
 [来源](https://zhuanlan.zhihu.com/p/100353781)
 
@@ -180,7 +193,7 @@ const add = (num1, num2) => {
 
 ## 浏览器朗读文字
 
-tags: [ WebAPI ] [ speechSynthesis ]
+tags: [WebAPI] [speechSynthesis]
 
 [来源](https://zhuanlan.zhihu.com/p/141582231)
 
@@ -193,9 +206,11 @@ function speak(sentence) {
 speak('hello world');
 ```
 
-## 替换字符
+## 正则匹配
 
-tags: [ Regex ]
+tags: [regex]
+
+### 替换字符
 
 ```javascript {.line-numbers}
 const reg =/[^\u4E00-\u9FA5A-Za-z]/g;
@@ -203,9 +218,7 @@ const text = "asldfj123林@@#";
 console.log(text.replace(reg, ''));
 ```
 
-## 检验字符
-
-tags: [ Regex ]
+### 检验字符
 
 ```javascript {.line-numbers}
 const reg =/[^\u4E00-\u9FA5A-Za-z]/g;
@@ -215,7 +228,7 @@ console.log(reg.test(e));
 
 ## 匹配url的参数
 
-tags: [ URLSearchParams ] [ split ] [ Regex ]
+tags: [URLSearchParams] [array] [split] [Regex]
 
 使用 [URLSearchParams](https://developer.mozilla.org/zh-CN/docs/Web/API/URLSearchParams)
 
@@ -247,25 +260,15 @@ console.log(params.appid);
 
 ## 创建文件流
 
-tags: [ File ]
+tags: [File]
 
 ```javascript {.line-numbers}
 const file = new File(["foo"], "foo.txt", { type: "text/plain", });
 ```
 
-## 统计字母个数
-
-tags: [ ES6 ] [ reduce ]
-
-```javascript {.line-numbers}
-const data = ['a','a','b','a','c','b','d','b','c','b','c'];
-const result = data.reduce((acc, v) => (acc[v] = (acc[v] || 0 ) + 1, acc),{});
-console.log(result);
-```
-
 ## 接收媒体输入
 
-tags: [ Media ]
+tags: [getUserMedia]
 
 [getUserMedia - mdn](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaDevices/getUserMedia)
 
@@ -279,9 +282,19 @@ navigator.mediaDevices.getUserMedia(constraints)
     });
 ```
 
-## 打乱数组
+## 数组
 
-tags: [ Random ]
+### 生成数组
+
+tags: [array] [from]
+
+```javascript
+const arr = Array.from({length: 16}, (v, i) => {return {}});
+```
+
+### 打乱数组
+
+tags: [array] [Math] [random]
 
 ```javascript {.line-numbers}
 // 不完全乱序
@@ -298,17 +311,75 @@ for (let i = 1; i < arr.length; i++) {
 console.log(arr)
 ```
 
-## 随机生成11位字符串
+### 过滤假值
 
-tags: [ Random ]
+tags: [array] [filter]
+
+```javascript {.line-numbers}
+const arr = [1,2,3];
+arr.lenth = 100;
+console.log(arr);
+const ans = arr.filter(v => Boolean);
+console.log(ans);
+```
+
+### 数组填充
+
+tags: [array] [fill]
+
+```javascript {.line-numbers}
+const array = [1,2,3];
+const zeroArray = new Array(3).fill(0);
+const newArray = [...array, ...zeroArray];
+console.log(newArray);
+```
+
+### 统计字母个数
+
+tags: [ES6] [array] [reduce]
+
+```javascript {.line-numbers}
+const data = ['a','a','b','a','c','b','d','b','c','b','c'];
+const result = data.reduce((acc, v) => (acc[v] = (acc[v] || 0 ) + 1, acc),{});
+console.log(result);
+```
+
+### 对象数组多字段排序
+
+tags: [array] [sort]
+
+```js
+const personList = [
+  { name:'Sandra Clark', age:10, id:2001 },
+  { name:'George Williams', age:10, id:2010 },
+  { name:'Jeffrey Williams', age:24, id:2008 },
+  { name:'James Jones', age:10, id:2008 },
+  { name:'Linda Martin', age:10, id:2001 },
+  { name:'Linda Williams', age:24, id:2000 },
+  { name:'Joseph Lee', age:26, id:20015 },
+  { name:'Daniel Rodriguez', age:10, id:2001 },
+  { name:'James Taylor', age:10, id:2000 },
+]
+// 先按 age 排序，age 相同再按 id 排序，id 相同则再按 name 排序
+personList.sort((m,n) => {
+    if (a.age !== b.age) return a.age - b.age
+    else if (a.id !== b.id) return a.id - b.id
+    else if (a.name !== b.name) return a.name.localeCompare(b.name) 
+});
+console.log(personList);
+```
+
+## 随机生成
+
+tags: [Math] [random]
+
+### 11位字符串
 
 ```javascript {.line-numbers}
 console.log(Math.random().toString(36).substring(2))
 ```
 
-## 随机颜色
-
-tags: [ Random ]
+### 颜色
 
 ```javascript {.line-numbers}
 const randomColor = `#${Math.floor(Math.random() * 0xffffff).toString(16).padEnd(6, '0')}`
@@ -317,29 +388,29 @@ console.log(randomColor)
 
 ## 拖动元素
 
-tags: [ Drag & Drop ]
+tags: [drag] [drop]
 
 [参考](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
 
 ```html {.line-numbers}
-<div draggable="true" ondragstart="dragElement(event, data)"></div>
+<div draggable="true" ondragstart="dragElement(data)"></div>
 <!-- define drop zone -->
-<div ondragover="overElement(event)" ondrop="dropElement(event)"></div>
+<div ondragover="overElement()" ondrop="dropElement()"></div>
 ```
 
 ```javascript {.line-numbers}
 // 开始拖动. 存储信息
-function dragElement(event, data){
+function dragElement(data){
     // define drag's data
     event.dataTransfer.setData('data', data);
 }
 // 悬浮到可放置区域
-function overElement(event){
+function overElement(){
     event.preventDefault();
     event.dataTransfer.dropEffect = "move";
 }
 // 结束拖动，接收信息
-function dropElement(event){
+function dropElement(){
     event.preventDefault();
     const data = event.dataTransfer.getData("data");
     const target = event.target;
@@ -349,7 +420,7 @@ function dropElement(event){
 
 ## 拖动加载文件
 
-tags: [ Drag & Drop ] [ FileReader ]
+tags:[event] [drag] [drop] [FileReader]
 
 ```javascript {.line-numbers}
 dropzone.addEventListener('dragover', (e) => {
@@ -372,7 +443,7 @@ dropzone.addEventListener('drop',(e) => {
 
 ## 清空拖动选择
 
-tags: [ JavaScript ]
+tags: [getSelection]
 
 ```javascript {.line-numbers}
 // onmousemove
@@ -381,21 +452,9 @@ removeSelection(){
 }
 ```
 
-## 过滤假值
-
-tags: [ JavaScript ]
-
-```javascript {.line-numbers}
-const arr = [1,2,3];
-arr.lenth = 100;
-console.log(arr);
-const ans = arr.filter(v => Boolean);
-console.log(ans);
-```
-
 ## 文档碎片
 
-tags: [ createDocumentFragment ]
+tags: [createDocumentFragment]
 
 ```javascript {.line-numbers}
 const ul = document.getElementById("ul");
@@ -410,7 +469,7 @@ ul.appendChild(fragment);
 
 ## 将HTML字符串转换为DOM节点
 
-tsgs: [ HTMLElement ]
+tsgs: [innerHTML] [DOMParser] [createContextualFragment]
 
 [将HTML字符转换为DOM节点并动态添加到文档中](https://www.cnblogs.com/xuanhun/p/9499348.html)
 
@@ -423,20 +482,9 @@ const node = let doc = new DOMParser().parseFromString(template, 'text/html');
 const node = document.createRange().createContextualFragment(template);
 ```
 
-## 数组填充
-
-tags: [ Array ] [ fill ]
-
-```javascript {.line-numbers}
-const array = [1,2,3];
-const zeroArray = new Array(3).fill(0);
-const newArray = [...array, ...zeroArray];
-console.log(newArray);
-```
-
 ## 屏幕共享 & 视频录制
 
-tags: [ WebAPI ] [ getDisplayMedia ] [ MediaRecorder ]
+tags: [WebAPI] [getDisplayMedia] [MediaRecorder]
 
 [来源](https://segmentfault.com/a/1190000040026747)
 
@@ -496,9 +544,9 @@ stop.addEventListener('click', (e) => stopCapture(), false);
 download.addEventListener('click', (e) => downloadVideo(), false);
 ```
 
-## 动态添加input后自动聚焦
+## 动态添加\<input>后自动聚焦
 
-tags: [ jquery ] [ focus ]
+tags: [jquery] [focus]
 
 ```javascript {.line-numbers}
 const input = `<input type="text">`
@@ -506,18 +554,18 @@ $("#btn").before(input);
 $("#btn").prev().focus();
 ```
 
-## 获取 selected option
+## 获取\<select>被选中的选项
 
-tags: [ jquery ] [ select ] [ option ]
+tags: [jquery] [select] [option]
 
 ```javascript {.line-numbers}
 const value = $('#select option:selected').val();
 console.log(value);
 ```
 
-## 阻止a标签默认跳转
+## 阻止\<a>默认跳转
 
-tags: [ a ] [ href ]
+tags: [a] [href]
 
 方法1
 
@@ -532,9 +580,9 @@ const links = document.querySelectorAll('a');
 Array.form(links).map(v => {v.onlink = () => {return false}})
 ```
 
-## 设置checkbox选中、取消选中、获取被选中的值、判断是否选中等
+## 设置 input[checkbox] 选中、取消选中、获取被选中的值、判断是否选中
 
-tags: [ jquery ] [ checkbox ]
+tags: [jquery] [checkbox]
 
 [参考](https://blog.csdn.net/chenchunlin526/article/details/77448168)
 
@@ -549,9 +597,9 @@ $("input:checkbox:checked").val();
 $("input[type='checkbox']").prop('checked');
 ```
 
-## 禁用select下拉框
+## 禁用\<select>
 
-tags: [ select ]
+tags: [select]
 
 方法1
 
@@ -571,17 +619,17 @@ tags: [ select ]
 <select disabled></select>
 ```
 
-## 重置select
+## 重置\<select>
 
-tags: [ jquery ] [ select ]
+tags: [jquery] [select]
 
 ```javascript
 $("#select option:first").prop("selected", 'selected');
 ```
 
-## 清空input选中的文件
+## 清空\<input>选中的文件
 
-tags:  [ jquery ] [ input ] [ file ]
+tags: [jquery] [input:file]
 
 ```javascript
 $('input[type=file]').val('');
@@ -589,12 +637,12 @@ $('input[type=file]').val('');
 
 ## 上传图片
 
-tags: [ Javascript ] [ jquery ] [ HTML ]
+tags: [jquery] [input:file] [formData]
 
 ```html {.line-numbers}
-<div class="image-list"></div>
+<div class="micro-image-list"></div>
 <div 
-    class="upload-image" 
+    class="micro-upload-image" 
     onclick="uploadImage(this)"
 >
     <input 
@@ -669,7 +717,7 @@ function changeImage(el){
 
 ## 视频截图
 
-tags: [ Javascript ] [ canvas ]
+tags: [canvas] [screenshot]
 
 工具：html2Canvas
 
@@ -700,7 +748,7 @@ function screenshot(){
 
 ## 复制内容到粘贴板
 
-tags: [ Javascript ]
+tags: [copy]
 
 ```html
 <input type="text" id="copy-text-store" class="copy-text-store">
@@ -728,7 +776,7 @@ function copyLink() {
 
 ## 全屏
 
-tags: [ Javascript ]
+tags: [fullscreen]
 
 ```javascript {.line-numbers}
 function fullScreen(el) {
@@ -749,12 +797,12 @@ function fullScreen(el) {
 
 ## 退出全屏
 
-tags: [ Javascript ]
+tags: [cancelFullScreen]
 
 ```javascript {.line-numbers}
 function exitFullScreen() {
-    if (document.cancleFullScreen) {
-        document.cancleFullScreen()
+    if (document.cancelFullScreen) {
+        document.cancelFullScreen()
     } else if (document.webkitCancelFullScreen) {
         document.webkitCancelFullScreen()
     } else if (document.mozCacelFullScreen) {
@@ -775,7 +823,7 @@ function exitFullScreen() {
 
 ## 监听全屏、退出全屏
 
-tags: [ Javascript ]
+tags: [fullscreen]
 
 ```javascript {.line-numbers}
 function onfullscreenHandle(){
@@ -798,7 +846,7 @@ document.onmsfullscreenchange = (event) => {
 
 ## 监听 localStorage、sessionStorage 事件
 
-tags: [ event ] [ storage ]
+tags: [event] [storage]
 
 注意：storage 事件有一个很特别的地方，就是它不在导致数据变化的当前页面触发，而是在同一个域名的其他窗口触发。通过这种机制，实现多个窗口之间的通信。
 
@@ -812,17 +860,9 @@ window.addEventListener('storage', (e) => {
 })
 ```
 
-## 生成数组
-
-tags: [ Javascript ]
-
-```javascript
-const arr = Array.from({length: 16}, (v, i) => {return {}});
-```
-
 ## 下载文件
 
-tags: [ Javascript ]
+tags: [download]
 
 [参考](https://blog.csdn.net/weixin_42981560/article/details/115507234)
 
@@ -838,9 +878,41 @@ function downloadFile(blob){
 }
 ```
 
+## 读取文件
+
+tags: [ajax]
+
+```html
+<script>
+  const readFile = path => {
+    return new Promise((resolve, reject) => {
+      const xhr = new XMLHttpRequest();
+      xhr.open('get', path);
+      xhr.onreadystatechange = () => {
+        if(xhr.readyState === 4){
+          if(xhr.status === 200){
+            resolve(xhr.responseText);
+          }
+          reject('Request bad!');
+        }
+      }
+      xhr.onerror = () => {
+        reject(new Error('An error occured during the transcation'));
+      }
+      xhr.send();
+    })
+  }
+  readFile('./index.json').then(res => {
+    console.log(res);
+  }).catch(err => {
+    console.error(err);
+  })
+</script>
+```
+
 ## 触底加载
 
-tags: [ jquery ] [ Scroll ]
+tags: [jquery] [scroll]
 
 ```javascript {.line-numbers}
 $('#id').on('scroll', (e) => {
@@ -858,7 +930,7 @@ function loadData(){
 
 ## 控制输入框输入，光标不移动
 
-tags: [Input] [ Javascript ]
+tags: [input] [setSelectionRange]
 
 [setSelectionRange - mdn](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLInputElement/setSelectionRange)
 
@@ -876,9 +948,9 @@ input.addEventListener('input', (e) => {
 })
 ```
 
-## 防抖 debounce
+## 防抖
 
-tags: [interview]
+tags: [interview] [debounce]
 
 ```javascript {.line-numbers}
 // 在一段时间结束后, 执行
@@ -897,9 +969,9 @@ const debounce = (fn, delay) => {
 }
 ```
 
-## 节流 throttle
+## 节流
 
-tags: [interview]
+tags: [interview] [throttle]
 
 ```javascript {.line-numbers}
 // 在一段时间内只执行一次
@@ -918,7 +990,7 @@ const throttle = (fn, delay) => {
 
 ## 生成UUID
 
-tags: [javascript]
+tags: [uuid]
 
 ```javascript {.line-numbers}
 const createUuid = () => {
@@ -934,7 +1006,7 @@ console.log(uuid);
 
 ## POST 请求上传文件
 
-tags: [post] [上传文件]
+tags: [post] [upload]
 
 multipart/form-data;boundary=xxx
 boundary会自动生成，所以不要手动添加 Content-Type, 保留 headers 参数
@@ -963,7 +1035,7 @@ if (history.scrollRestoration) {
 
 ## 参数非空检测
 
-tags: [function]
+tags: [function] [params]
 
 ```javascript
 const isRequired = () => { throw new Error('param is required'); };
@@ -975,9 +1047,9 @@ hello();
 hello('hello');
 ```
 
-## text/x-jquery-tmpl
+## jquery模板语法
 
-tags: [jquery]
+tags: [jquery] [jquery-tmpl]
 
 [text/x-jquery-tmpl 使用记录](https://blog.csdn.net/weixin_43549578/article/details/103933408)
 
@@ -994,7 +1066,9 @@ ${}
 {{tmpl}} 
 ```
 
-## 将元素滚动到
+## 将元素滚动到用户可见
+
+tags: [scroll] [scrollIntoView]
 
 [mdn - scrollIntoView](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/scrollIntoView)
 [张鑫旭 - CSS scroll-behavior和JS scrollIntoView让页面滚动平滑](https://www.zhangxinxu.com/wordpress/2018/10/scroll-behavior-scrollintoview-%e5%b9%b3%e6%bb%91%e6%bb%9a%e5%8a%a8/)
@@ -1011,9 +1085,9 @@ scrollIntoView() 方法会滚动元素的父容器，使被调用 scrollIntoView
 </head>
 <body>
     <div>
-        <button>滚到底部</button>
+        <button>点我</button>
     </div>
-    <p>回到顶部</p>
+    <p>流汗黄豆 &#x1F605; </p>
     <script>
         const p = document.querySelector('p');
         const btn = document.querySelector('button');
@@ -1032,6 +1106,38 @@ scrollIntoView() 方法会滚动元素的父容器，使被调用 scrollIntoView
 
 ```
 
+## 表单请求
+
+tags: [post] [axios]
+
+application/x-www-form-urlencoded
+
+```javascript
+// 原生 URLSearchParams
+const stringify = (data) => {
+    const params = new URLSearchParams();
+    for(const [key,value] of Object.entries(data)) {
+        params.append(key, value);
+    }
+    return params;
+}
+
+// 或者使用 Qs 模块
+import qs from 'Qs'
+let data = {"code":"1234","name":"yyyy"};
+const formData = qs.stringify(data);
+```
+
+## 数字由逗号分隔
+
+tags: [number] [ES5]
+
+```js
+const num = 1119.721;
+const res = num.toLocaleString();
+console.log(res);
+```
+
 [Back Top](#catalogue)
 
 ---
@@ -1040,7 +1146,7 @@ scrollIntoView() 方法会滚动元素的父容器，使被调用 scrollIntoView
 
 ## 排除第一个元素
 
-tags: [ CSS ] [ 伪类 ]
+tags: [pseudo-class] [:first-of-type]
 
 ```css {.line-numbers}
 .title:not(:first-of-type){
@@ -1050,15 +1156,17 @@ tags: [ CSS ] [ 伪类 ]
 
 ## iconfont的使用
 
-tags: [ CSS ]
+tags: [iconfont]
 
 ```html
 <i class="iconfont 图标类名"></i>
 ```
 
-## nth-child奇偶匹配
+## nth-child
 
-tags: [ CSS ]
+tags: [pseudo-class] [:nth-child]
+
+### 奇偶匹配
 
 [来源](http://www.internetzg.com/view_news.asp?id=578)
 
@@ -1067,9 +1175,7 @@ tags: [ CSS ]
 :nth-child(even){}
 ```
 
-## nth-child根据规则给样式
-
-tags: [ CSS ] [ 伪类 ]
+### 根据规则给样式
 
 ```css
 .className:nth-child(3n+2){
@@ -1079,7 +1185,7 @@ tags: [ CSS ] [ 伪类 ]
 
 ## 间隔排布
 
-tags: [ CSS ]
+tags: [flex] [flex-wrap] [gap]
 
 ```css {.line-numbers}
 .item-list{
@@ -1094,20 +1200,22 @@ tags: [ CSS ]
 }
 ```
 
-## box-shadow阴影
+## 内投影
 
-tags: [ CSS ]
+tags: [box-shadow] [inset]
 
 ```css
 box-shadow: inset 0 10px 7px 0 rgba(72, 97, 123, 0.7);
 ```
 
-## 自定义箭头
+## 自定义图形
 
-tags: [ CSS ]
+tags: [pesudo-element] [::before]
+
+### 箭头
 
 ```css {.line-numbers}
-.className {
+.className::before {
     content: "";
     position: absolute;
     border: 2px solid blue;
@@ -1121,12 +1229,10 @@ tags: [ CSS ]
 }
 ```
 
-## 自定义圆点
-
-tags: [ CSS ]
+### 圆点
 
 ```css {.line-numbers}
-.className {
+.className::before {
     content: "";
     border: 5px solid red;
     border-radius: 50%;
@@ -1136,9 +1242,9 @@ tags: [ CSS ]
 }
 ```
 
-## 阻止鼠标选择文字
+## 禁止用户选择
 
-tags: [ CSS ]
+tags: [user-select]
 
 ```css {.line-numbers}
 .remove-select {
@@ -1150,10 +1256,9 @@ tags: [ CSS ]
 }
 ```
 
-## 渐变色
+## 渐变色文本
 
-tags: [ CSS ]
-
+tags: [linear-gradient] [-webkit-background-clip] [-webkit-text-fill-color]
 注意：background必须放在前面
 
 ```css {.line-numbers}
@@ -1162,19 +1267,9 @@ background: linear-gradient(0deg, #29e2ee 0%, #29bcee 100%);
 -webkit-text-fill-color: transparent;
 ```
 
-## 去除滚动条(不够优雅)
-
-tags: [ CSS ]
-
-```css {.line-numbers}
-body {
-    overflow: hidden;
-}
-```
-
 ## banner
 
-tags: [ CSS ] [skew]
+tags: [skew] [background-image] [linear-gradient]
 
 ```css {.line-numbers}
 .mask-group{
@@ -1211,36 +1306,37 @@ tags: [ CSS ] [skew]
 }
 ```
 
-## a标签去除默认样式
+## 去除\<a>默认样式
 
-tags: [ CSS ]
+tags: [text-decoration]
 
 ```css {.line-numbers}
- /*包含以下四种的链接*/
-a {
-    text-decoration: none;
-}
+a, 
 /*正常的未被访问过的链接*/
-a:link {
-    text-decoration: none;
-}
+a:link, 
 /*已经访问过的链接*/
-a:visited {
-    text-decoration: none;
-}
+a:visited,
 /*鼠标划过(停留)的链接*/
-a:hover {
+a:hover,
+/* 正在点击的链接*/
+a:active{
     text-decoration: none;
 }
-/* 正在点击的链接*/
-a:active {
-    text-decoration: none;
+```
+
+## 去除[input:password]图标
+
+tags: [input:password] [icon]
+
+```css
+input[type="password" i]::-ms-reveal {
+    display: none !important;
 }
 ```
 
 ## 多行文本省略
 
-tags: [ CSS ]
+tags: [text-overflow] [white-space]
 
 ```css {.line-numbers}
 .className {
@@ -1252,7 +1348,7 @@ tags: [ CSS ]
 
 ## 文本换行显示
 
-tags: [ CSS ]
+tags: [word-break]
 
 ```css {.line-numbers}
 .className{
@@ -1262,7 +1358,7 @@ tags: [ CSS ]
 
 ## 文本不换行
 
-tags: [ CSS ]
+tags: [whtie-space]
 
 ```css {.line-numbers}
 .className{
@@ -1272,7 +1368,7 @@ tags: [ CSS ]
 
 ## 给文本添加下划线
 
-tags: [ CSS ]
+tags: [text-decoration]
 
 ```css {.line-numbers}
 .className{
@@ -1280,11 +1376,9 @@ tags: [ CSS ]
 }
 ```
 
-## ::placeholder
+## 修改表单元素的占位文本样式
 
-tags: [ CSS ] [ 伪元素 ]
-
-修改表单元素的占位文本样式
+tags: [pesudo-element] [::placeholder]
 
 ```css {.line-numbers}
 .className::placeholder{
@@ -1293,22 +1387,22 @@ tags: [ CSS ] [ 伪元素 ]
 }
 ```
 
-## 背景图片不全
+## 解决背景图片不全问题
 
-tags: [ CSS ]
+tags: [background] [background-size]
 
 ```css {.line-numbers}
 .className{
-    background: url('../../assets/image/videoCall/card-bg.png') no-repeat;
+    background: url('xxx.png') no-repeat;
     background-size: 100% 100%;
 }
 ```
 
 ## 匹配后代获得焦点
 
-tags: [ CSS ]
+tags: [pesudo-class] [:focus-within]
 
-[参考](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:focus-within)
+[mdn - :focus-within](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:focus-within)
 
 ```css {.line-numbers}
 .father:focus-within{
@@ -1319,9 +1413,9 @@ tags: [ CSS ]
 }
 ```
 
-## 去除 input-number 默认的按钮
+## 去除 input[number] 默认的按钮
 
-tags: [ CSS ] [ 伪类 ]
+tags: [pesudo-element] [::webkit-inner-spin-button]
 
 ```css {.line-numbers}
 .input[type="number"]::-webkit-inner-spin-button{
@@ -1331,7 +1425,7 @@ tags: [ CSS ] [ 伪类 ]
 
 ## position：fixed 如何水平垂直居中
 
-tags: [ CSS ]
+tags: [fixed]
 
 ```css {.line-numbers}
 /* 宽度确定 */
@@ -1355,7 +1449,7 @@ tags: [ CSS ]
 
 ## 定义全局变量
 
-tags:[ CSS ]
+tags:[pseudo-class] [:root]
 
 ```css {.line-numbers}
 :root {
@@ -1366,7 +1460,7 @@ tags:[ CSS ]
 
 ## 引入文件
 
-tags:[ CSS ]
+tags:[import]
 
 ```css
 import url('./style.css');
@@ -1376,7 +1470,7 @@ import "./style.css";
 
 ## 进度条
 
-tags: [ CSS ] [ input:range ]
+tags: [input:range] [pseudo-element] [::webkit-slider-thumb] [::webkit-slider-runnable-track]
 
 ```html
 <input 
@@ -1423,7 +1517,7 @@ function changeVolume(el){
 
 ## 文本选中样式
 
-tags: [ CSS ] [ 伪类 ]
+tags: [pseudo-element] [::selection]
 
 ```css {.line-numbers}
 ::selection,
@@ -1435,12 +1529,12 @@ tags: [ CSS ] [ 伪类 ]
 
 ## 图片异常处理
 
-tags: [ CSS ]
+tags: [img] [pseudo-element] [::before] [::after] [onerror]
 
 [前端小智-稀土掘金](https://juejin.cn/post/7062860159286149127)
 
 ```html
-<img src="https://miro.medium.com/xxx.jpg" alt='fireworks picture' onerror="this.classList.add('error');">
+<img src="xxx.jpg" alt='fireworks picture' onerror="this.classList.add('error');">
 ```
 
 ```css
@@ -1457,7 +1551,7 @@ img.error::before {
     top: 0;
     width: 100%;
     height: 100%;
-    background: #f5f5f5 url('https://cdn-images-1.medium.com/max/1600/1*we8wfyztsdo12e2Cww6oVA.jpeg') no-repeat center / 100% 100%;
+    background: #f5f5f5 url('error.png') no-repeat center / 100% 100%;
 }
 /* 优化使用alt说明图片含义 */
 img.error::after {
@@ -1478,23 +1572,23 @@ img.error::after {
 }
 ```
 
-## accent-color
+## 重置表单组件的颜色
 
-tags: [ CSS ]
+tags: [property] [accent-color]
 
 可以在不改变浏览器默认表单组件基本样式的前提下重置表单组件的颜色。
 
 ```html
 <!-- 目前仅支持以下表单标签 -->
-<input type=”checkbox”>
-<input type=”radio”>
-<input type=”range”>
+<input type="checkbox">
+<input type="radio">
+<input type="range">
 <progress>
 ```
 
-## ::marker
+## 修改\<li>默认项目符号或数字
 
-tags: [ CSS ] [ 伪元素 ]
+tags: [pseudo-element] [::marker]
 
 [mdn - ::marker](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::marker)
 
@@ -1507,21 +1601,64 @@ ul li::marker {
 }
 ```
 
-## caret-color
+## 修改插入光标的颜色
 
-tags: [ CSS ]
+tags: [property] [caret-color]
 
 [mdn - caret-color](https://developer.mozilla.org/zh-CN/docs/Web/CSS/caret-color)
 
 用来定义插入光标（caret）的颜色
 
-## writing-mode
+## 文字排布方式
 
-tags: [ CSS ]
+tags: [property] [writing-mode]
 
 [layui表格反转的一个简单实现方式](https://www.php.cn/layui/436365.html)
 [mdn - writing-mode](https://developer.mozilla.org/zh-CN/docs/Web/CSS/writing-mode)
 指定块流动方向，即块级容器堆叠的方向，以及行内内容在块级容器中的流动方向
+
+## 自定义滚动条样式
+
+tags: [pseudo-element] [::-webkit-scrollbar-*]
+
+[关于滚动条样式](https://juejin.cn/post/6997011443967066143)
+
+- ::-webkit-scrollbar：
+  - 用于设置滚动条的整体样式
+  - 在这里设置宽高，以控制滚动条尺寸，且必须要设置宽高，否则不生效
+  - 宽高分别对应 y轴 和 x轴 的滚动条尺寸
+  - 若宽高为0，则可隐藏滚动条，但仍可保持滚动
+- ::-webkit-scrollbar-track：
+  - 滚动条轨道
+  - 不设置则不出现轨道
+- ::-webkit-scrollbar-track-piece：
+  - 没有滑块的滚动条轨道，或者说是内层轨道
+  - 同滚动条轨道，
+- ::-webkit-scrollbar-thumb：
+  - 滚动条滑块，即滚动条滚动的部分
+  - 必须要设置，否则不会出现滑块
+- ::-webkit-scrollbar-button：
+  - 滚动条两端的箭头按钮
+  - 不设置则不出现
+- ::-webkit-scrollbar-corner：
+  - X轴滚动条和Y轴滚动条的交接处
+  - 不设置，默认为白色小方块，宽高随X轴和Y轴滚动条尺寸
+
+```css
+.container::-webkit-scrollbar{
+    width: 10px;
+    height: 100%;
+    border-radius: 5px;
+}
+.container::-webkit-scrollbar-track{
+    background: transparent;
+    border-radius: 5px;
+}
+.container::-webkit-scrollbar-thumb{
+    background: #0E226A;
+    border-radius: 5px;
+}
+```
 
 [Back Top](#catalogue)
 
@@ -1531,7 +1668,7 @@ tags: [ CSS ]
 
 ## 初始化 data 中的数据
 
-tags: [ Vue ]
+tags: [vue2]
 
 ```javascript {.line-numbers}
 Object.assign(this.$data, this.$options.data());
@@ -1539,7 +1676,7 @@ Object.assign(this.$data, this.$options.data());
 
 ## 模拟点击
 
-tags: [ Vue ]
+tags: [vue2]
 
 ```vue {.line-numbers}
 <template>
@@ -1556,9 +1693,10 @@ export default {
 
 ## 监听路由变化
 
-tags: [ Vue ] [ Vue Router ]
+tags: [vue2] [vue router]
 
 ```vue {.line-numbers}
+// some code
 <script>
 export default {
     watch:{
@@ -1568,13 +1706,15 @@ export default {
     }
 }
 </script>
+// some code
 ```
 
 ## 返回上一个页面
 
-tags: [ Vue ] [ Vue Router ]
+tags: [vue2] [vue router]
 
 ```vue {.line-numbers}
+// some code
 <script>
 export default {
     methods:{
@@ -1584,11 +1724,12 @@ export default {
     }
 }
 </script>
+// some code
 ```
 
 ## 路由导航
 
-tags: [ Vue ] [ Vue Router ]
+tags: [vue2] [vue router]
 
 [来源](https://router.vuejs.org/zh/api/#router-link-props)
 
@@ -1606,7 +1747,7 @@ tags: [ Vue ] [ Vue Router ]
 
 ## 单选按钮（选中/取消选中）
 
-tags: [ Vue ] [ ElementUI ]
+tags: [vue2] [elementUI]
 
 ```vue {.line-numbers}
 <template>
@@ -1639,7 +1780,7 @@ export default {
 
 ## 表单验证
 
-tags: [ Vue ] [ ElementUI ]
+tags: [vue2] [elementUI]
 
 ```javascript {.line-numbers}
 this.$refs[formName].validate( valid => {
@@ -1652,7 +1793,7 @@ this.$refs[formName].validate( valid => {
 
 ## 表单重置
 
-tags: [ Vue ] [ ElementUI ]
+tags: [vue2] [elementUI]
 
 ```javascript {.line-numbers}
 this.$refs[formName].resetFields();
@@ -1660,7 +1801,7 @@ this.$refs[formName].resetFields();
 
 ## 禁止用户选择过去的时间
 
-tags: [ Vue ] [ Element UI ]
+tags: [vue2] [elementUI]
 
 ```vue
 <template>
@@ -1690,7 +1831,7 @@ tags: [ Vue ] [ Element UI ]
 
 ## 阻止路由进入页面
 
-tags: [ Vue ] [ Vue Router ]
+tags: [vue2] [vue router]
 
 ```javascript
 router.beforeEach((route, redirect, next) => {
@@ -1705,7 +1846,7 @@ router.beforeEach((route, redirect, next) => {
 
 ## 跨源数据传输
 
-tags: [ vue ] [ JavaScript ]
+tags: [vue2] [postMessage]
 
 [来源](https://segmentfault.com/a/1190000014882611)
 [postMessage](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/postMessage)
@@ -1745,7 +1886,7 @@ methods:{
 
 ## 右键菜单
 
-tags: [ HTML ] [ Event ]
+tags: [event] [contextmenu]
 
 ```html
 <!DOCTYPE html>
@@ -1839,61 +1980,35 @@ tags: [ HTML ] [ Event ]
 
 ## iframe 添加设备权限
 
-tags: [ HTML ]
+tags: [iframe] [allow]
 
 ```html
-<iframe src="" frameborder="0" width="800" height="600" allow="microphone;camera;midi;encrypted-media;"></iframe>
+<iframe 
+    src="" 
+    frameborder="0" 
+    width="800" 
+    height="600" 
+    allow="microphone;camera;midi;encrypted-media;"
+></iframe>
 ```
 
-## 读取文件
+## 转义字符
 
-tags: [ HTML ] [ Javascript ] [ AJAX ]
+tags: [escape]
 
-```html
-<script>
-  const readFile = path => {
-    return new Promise((resolve, reject) => {
-      const xhr = new XMLHttpRequest();
-      xhr.open('get', path);
-      xhr.onreadystatechange = () => {
-        if(xhr.readyState === 4){
-          if(xhr.status === 200){
-            resolve(xhr.responseText);
-          }
-          reject('Request bad!');
-        }
-      }
-      xhr.onerror = () => {
-        reject(new Error('An error occured during the transcation'));
-      }
-      xhr.send();
-    })
-  }
-  readFile('./index.json').then(res => {
-    console.log(res);
-  }).catch(err => {
-    console.error(err);
-  })
-</script>
-```
-
-## 中文空格字符
-
-tags: [ HTML ] [ 转义字符 ]
+### 中文空格字符
 
 [参考](https://www.cnblogs.com/chenshihaook/p/6186343.html)
 
 `&emsp;`
 
-## 制表符的转义字符
-
-tags: [ HTML ] [ 转义字符 ]
+### 制表符
 
 `&#9;`, 只能在`<pre></pre>`中使用。
 
 ## 增加焦点
 
-tags: [ HTML ] [ :focus ]
+tags: [tabindex] [pseudo-class] [:focus]
 
 由于div等元素无法接受键盘或其他用户事件，即不支持:focus伪类，可通过增加tabIndex属性使其支持:focus
 
@@ -1915,7 +2030,7 @@ div:focus{
 
 ## 如何关闭顶部导航
 
-tags: [ uniapp ]
+tags: [titleView]
 
 ```json
 // 关闭全局顶部导航
@@ -1936,7 +2051,7 @@ tags: [ uniapp ]
 
 ## 获取路由参数
 
-tags: [ uniapp ]
+tags: [onLoad] [routes]
 
 1.onLoad
 
@@ -1966,7 +2081,7 @@ tags: [ uniapp ]
 
 ## 设置代理
 
-tags: [ proxy ]
+tags: [proxy]
 
 ```shell
 git config --global http.proxy http://127.0.0.1:7890
@@ -1975,7 +2090,7 @@ git config --global https.proxy https://127.0.0.1:7890
 
 ## 取消代理
 
-tags: [ proxy ]
+tags: [proxy]
 
 ```shell
 git config --global --unset http.proxy
@@ -1986,11 +2101,58 @@ git config --global --unset https.proxy
 
 ---
 
+# echarts
+
+[echarts.apache.org](https://echarts.apache.org/zh/option.html#title)
+
+## 格式化文本
+
+tags: [label] [text]
+
+```js
+option:{
+    label:{
+        formatter: '{a} <br/>{b} : {c} ({d}%)'
+    }
+}
+```
+
+## 富文本
+
+tags: [label] [text] [rich]
+
+```js
+option:{
+    label:{
+        formatter: '{name|{b}}\n{d}%',
+        rich: {
+            name: {
+                color: '#fff',
+                fontSize: 20,
+                padding: [0, 0, 10, 0]
+            }
+        }
+    }
+}
+```
+
+## 默认标签颜色与数据项颜色保持一致
+
+tags: [label] [color]
+
+```js
+option:{
+    label:{ 
+        color: 'inherit'
+    }
+}
+```
+
 # other
 
 ## 实现前后端跨域请求处理以及携带 Cookie
 
-tags: [ 跨域 ] [ Cookie ] [  CORS ]
+tags: [cross-domain] [cookie] [cors]
 
 - 前端
 
